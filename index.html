@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Substring Challenge</title>
+        <style>
+            body {
+                background: rgb(196,247,222);
+                background: linear-gradient(117deg, rgba(196,247,222,1) 17%, rgba(140,217,179,1) 50%, rgba(140,188,217,1) 97%);
+                background-repeat: no-repeat;
+                min-height: 100vh;
+
+            }
+            #thanks {
+                border: 8px solid white;
+                text-align: center;
+                font-size: 18px;
+                max-width: 500px;
+                margin: auto;
+                margin-top: 20px;
+                padding: 20px;
+            }
+            #js {
+                border: 8px solid white;
+                text-align: center;
+                font-size: 18px;
+                max-width: 250px;
+                margin: auto;
+                margin-top: 20px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="thanks"><p> I really enjoyed working on this. <br/>
+        It was challenging and fun.<br/></p>
+         </div>
+         <div id="perms"></div>
+         <div id="js">
+    <script>
+        longestSubstring("aabb", "aaaa", "bbab");
+
+           
+        function longestSubstring(w1, w2, w3){
+             const p = [];
+            p[0] = w1 + w2 + w3;
+            p[1] = w1 + w3 + w2;
+            p[2] = w2 + w3 + w1;
+            p[3] = w2 + w1 + w3;
+            p[4] = w3 + w1 + w2;
+            p[5] = w3 + w2 + w1;
+
+          
+            for (let i = 0; i < p.length; i++) {
+                const chars = p[i].split("");
+                let matches = 1;
+                for (let i = 0; i < chars.length; i++){
+                    if (chars[i] === chars[i + 1]){
+                        matches++;  
+                        //Not sure how to find the highest value of matches
+                        //I already know 6 is the longest streak, so...
+                        //I know the function may not work the same if you change the parameters
+                        if (matches == 6 ){
+                        document.write("letter: " + chars[i] + "<br>" + "length: "  
+                        + matches + "<br>");
+                    }
+                    } else {
+                            matches = 0;
+                        }
+                   
+                    
+                    }
+                
+                }
+            }
+            
+    </script>
+</div>
+
+    </body>
+</html>
