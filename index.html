@@ -33,12 +33,13 @@
     <body>
         <div id="thanks"><p> I really enjoyed working on this. <br/>
         It was challenging and fun.<br/></p>
-         </div>
-         <div id="perms"></div>
-         <div id="js">
+        </div>
+        <div id="js">
+       
+            <!-- JavaScript starts here -->
+             
     <script>
         longestSubstring("aabb", "aaaa", "bbab");
-
            
         function longestSubstring(w1, w2, w3){
              const p = [];
@@ -48,7 +49,6 @@
             p[3] = w2 + w1 + w3;
             p[4] = w3 + w1 + w2;
             p[5] = w3 + w2 + w1;
-
           
             for (let i = 0; i < p.length; i++) {
                 const chars = p[i].split("");
@@ -66,10 +66,7 @@
                     } else {
                             matches = 0;
                         }
-                   
-                    
                     }
-                
                 }
             }
             
